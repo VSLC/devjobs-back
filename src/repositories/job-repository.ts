@@ -2,7 +2,12 @@ import prisma from "../database/database";
 import { Job } from "../protocols";
 
 async function findJobs() {
-  return prisma.jobs.findMany();
+  return prisma.jobs.findMany({
+    include: {
+      country: true,
+      position: true,
+    },
+  });
 }
 
 async function insertJobs({
