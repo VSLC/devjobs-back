@@ -20,6 +20,8 @@ model jobs {
   countryId   Int?
   positionId  Int?
   logo        String
+  companyName String
+  contract    String
   website     String
   country     country?  @relation(fields: [countryId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   position    position? @relation(fields: [positionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
