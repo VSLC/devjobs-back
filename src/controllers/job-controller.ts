@@ -12,6 +12,21 @@ export async function getJobs(req: Request, res: Response) {
   }
 }
 
+export async function getJobById(req: Request, res: Response) {
+  const jobId = Number(req.params.jobId);
+
+  if (!jobId) {
+    return res.sendStatus(httpStatus.BAD_REQUEST);
+  }
+
+  try {
+    const jobById = await jobRepository.findJobById(jobId);
+    res.status(httpStatus.OK).send(jobById);
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(error);
+  }
+}
+
 export async function postJobs(req: Request, res: Response) {
   try {
     let {

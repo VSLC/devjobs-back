@@ -10,6 +10,16 @@ async function findJobs() {
   });
 }
 
+async function findJobById(jobId: number) {
+  return prisma.jobs.findUnique({
+    where: { id: jobId },
+    include: {
+      country: true,
+      position: true,
+    },
+  });
+}
+
 async function insertJobs({
   companyName,
   logo,
@@ -44,6 +54,7 @@ const jobsRepository = {
   findJobs,
   insertJobs,
   deleteJob,
+  findJobById,
 };
 
 export default jobsRepository;
