@@ -1,13 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "moduleResolution": "Node"
-    // ... your other options
-  },
   "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "module": "esnext",
+    "esModuleInterop": true
   }
 }
