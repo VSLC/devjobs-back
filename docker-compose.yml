@@ -3,11 +3,11 @@ services:
   db:
     image: postgres:13
     container_name: db
-    restart: always #container reinicia se morrer
+    restart: always
     ports:
       - 2345:5432
     env_file:
-      - .env.example #configurar POSTGRES_USER, POSTGRES_PASSWORD e POSTGRES_DB
+      - .env.example
 
   node_app:
     container_name: node_app
