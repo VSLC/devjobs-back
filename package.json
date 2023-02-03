@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "prisma generate",
-    "start": "npx nodemon src/server.ts",
-    "dev:migrate": "npx prisma migrate dev && nodemon index.ts"
+    "start": "npx prisma migrate deploy && npm run dev",
+    "dev": "nodemon --legacy-watch ./src/server.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
