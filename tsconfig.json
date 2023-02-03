@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es2020",
     "outDir": "dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "ts-node": {
-    // Tell ts-node CLI to install the --loader automatically
     "esm": true
   }
 }
