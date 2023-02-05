@@ -5,11 +5,10 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
+    "dev:migrate": "npx prisma migrate dev && npx prisma db seed && npm start",
+    "dev": "nodemon --legacy-watch ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "prisma generate",
-    "build": "tsc",
-    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm ./src/server.ts",
-    "dev:migrate": "npx prisma migrate dev && nodemon server.ts"
+    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm ./src/server.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
